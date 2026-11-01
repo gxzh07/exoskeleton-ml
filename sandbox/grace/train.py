@@ -48,7 +48,13 @@ class DigitClassifier(nn.Module):
         return self.layers(x)
 
 
-def train_one_epoch(model, loader, loss_fn, optimizer, device) -> float:
+def train_one_epoch(
+    model: nn.Module,
+    loader: DataLoader,
+    loss_fn: nn.Module,
+    optimizer: torch.optim.Optimizer,
+    device: torch.device,
+) -> float:
     """Go through the training data once, updating the model. Returns avg loss."""
     model.train()
     total_loss = 0.0
