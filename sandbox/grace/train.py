@@ -72,7 +72,7 @@ def train_one_epoch(
     return total_loss / len(loader)
 
 
-def evaluate(model, loader, device) -> float:
+def evaluate(model: nn.Module, loader: DataLoader, device: torch.device) -> float:
     """Return the model's accuracy (0 to 1) on data it has never trained on."""
     model.eval()
     correct = 0
